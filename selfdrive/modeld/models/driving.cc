@@ -285,10 +285,10 @@ void fill_lane_lines(cereal::ModelDataV2::Builder &framed, const std::array<floa
   });
 
   framed.setLaneLineProbs({
-    sigmoid(lanes.prob.left_far.val),
-    sigmoid(lanes.prob.left_near.val),
-    sigmoid(lanes.prob.right_near.val),
-    sigmoid(lanes.prob.right_far.val),
+    sigmoid(lanes.prob.left_far.val * 1.1),
+    sigmoid(lanes.prob.left_near.val * 1.1),
+    sigmoid(lanes.prob.right_near.val * 1.1),
+    sigmoid(lanes.prob.right_far.val * 1.1),
   });
 }
 
