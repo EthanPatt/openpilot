@@ -278,10 +278,10 @@ void fill_lane_lines(cereal::ModelDataV2::Builder &framed, const std::array<floa
   fill_xyzt(lane_lines[3], plan_t, X_IDXS_FLOAT, right_far_y, right_far_z);
 
   framed.setLaneLineStds({
-    exp(lanes.std.left_far[0].y),
-    exp(lanes.std.left_near[0].y),
-    exp(lanes.std.right_near[0].y),
-    exp(lanes.std.right_far[0].y),
+    exp(lanes.std.left_far[0].y * .5),
+    exp(lanes.std.left_near[0].y * .5),
+    exp(lanes.std.right_near[0].y * .5),
+    exp(lanes.std.right_far[0].y * .5),
   });
 
   framed.setLaneLineProbs({
